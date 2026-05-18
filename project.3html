@@ -1,1 +1,317 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Labs - LAUC</title>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            background:#f8f9fa;
+            color:#333;
+        }
+
+        .container{
+            width:90%;
+            margin:auto;
+        }
+
+        header{
+            background:linear-gradient(135deg,#2c3e50,#1a2530);
+            color:white;
+            padding:20px 0;
+        }
+
+        .header-container{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo-section{
+            display:flex;
+            align-items:center;
+            gap:20px;
+        }
+
+        .pcce-logo-container{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .pcce-logo-img{
+            width:60px;
+            height:60px;
+            background:white;
+            border-radius:8px;
+            padding:5px;
+        }
+
+        .virtual-labs-logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .virtual-labs-logo i{
+            color:#3498db;
+            font-size:30px;
+        }
+
+        .virtual-labs-logo h1 span{
+            color:#3498db;
+        }
+
+        .content{
+            background:white;
+            margin-top:30px;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .content-header{
+            margin-bottom:30px;
+        }
+
+        .content-header h2{
+            font-size:30px;
+            color:#2c3e50;
+        }
+
+        .content-header p{
+            color:gray;
+        }
+
+        .aim-sections{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+        }
+
+        .section-card{
+            background:#f8f9fa;
+            padding:25px;
+            border-radius:10px;
+            text-align:center;
+            cursor:pointer;
+            transition:0.3s;
+            border:2px solid transparent;
+        }
+
+        .section-card:hover{
+            transform:translateY(-5px);
+            border-color:#3498db;
+            box-shadow:0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .section-card.active{
+            background:#e8f4fc;
+            border-color:#3498db;
+        }
+
+        .section-card i{
+            font-size:35px;
+            color:#3498db;
+            margin-bottom:15px;
+        }
+
+        .section-card h3{
+            margin-bottom:10px;
+            color:#2c3e50;
+        }
+
+        .section-card p{
+            color:gray;
+        }
+
+        .feedback-button{
+            margin-top:15px;
+            padding:10px 20px;
+            border:none;
+            background:#3498db;
+            color:white;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:15px;
+            transition:0.3s;
+        }
+
+        .feedback-button:hover{
+            background:#217dbb;
+        }
+
+        footer{
+            margin-top:40px;
+            padding:20px;
+            text-align:center;
+            color:gray;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container header-container">
+
+        <div class="logo-section">
+
+            <div class="pcce-logo-container">
+
+                <img src="https://raw.githubusercontent.com/dineshkute90/virtual_lab_LAUC/main/pccoe.png"
+                class="pcce-logo-img">
+
+                <div>
+                    <h3>APPLIED SCIENCES & HUMANITIES</h3>
+                    <small>Pimpri Chinchwad College of Engineering</small>
+                </div>
+
+            </div>
+
+            <div class="virtual-labs-logo">
+                <i class="fas fa-flask"></i>
+                <h1>Virtual <span>Labs</span></h1>
+            </div>
+
+        </div>
+
+        <div>
+            <i class="fas fa-user-circle"></i>
+            Welcome Student
+        </div>
+
+    </div>
+</header>
+
+<main class="container content">
+
+    <div class="content-header">
+        <h2>A Virtual Lab on Rank of Matrix</h2>
+        <p>Engineering Mathematics Experiment</p>
+    </div>
+
+    <div class="aim-sections">
+
+        <div class="section-card active">
+            <i class="fas fa-bullseye"></i>
+            <h3>Aim</h3>
+            <p>Objective of experiment</p>
+        </div>
+
+        <div class="section-card">
+            <i class="fas fa-book"></i>
+            <h3>Theory</h3>
+            <p>Background concepts</p>
+        </div>
+
+        <div class="section-card">
+            <i class="fas fa-question-circle"></i>
+            <h3>Pretest</h3>
+            <p>Pre experiment assessment</p>
+        </div>
+
+        <div class="section-card">
+            <i class="fas fa-desktop"></i>
+            <h3>Simulation</h3>
+            <p>Interactive simulation</p>
+        </div>
+
+        <div class="section-card">
+            <i class="fas fa-clipboard-check"></i>
+            <h3>Posttest</h3>
+            <p>Post experiment assessment</p>
+        </div>
+
+        <div class="section-card">
+            <i class="fas fa-book-open"></i>
+            <h3>References</h3>
+            <p>Further reading materials</p>
+        </div>
+
+        <div class="section-card">
+            <i class="fas fa-users"></i>
+            <h3>Contributors</h3>
+            <p>People involved</p>
+        </div>
+
+        <!-- Feedback Card -->
+        <div class="section-card feedback-card">
+
+            <i class="fas fa-comment-alt"></i>
+
+            <h3>Feedback</h3>
+
+            <p>Share your experience</p>
+
+            <button class="feedback-button">
+                Give Feedback
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    Virtual Labs © 2025 |
+    Pimpri Chinchwad College of Engineering
+</footer>
+
+<script>
+
+    // Section card click
+
+    const sectionCards = document.querySelectorAll('.section-card');
+
+    sectionCards.forEach(card => {
+
+        card.addEventListener('click', () => {
+
+            sectionCards.forEach(c => {
+                c.classList.remove('active');
+            });
+
+            card.classList.add('active');
+
+            const sectionName =
+            card.querySelector('h3').textContent;
+
+            alert("Loading " + sectionName + " section...");
+
+        });
+
+    });
+
+    // Feedback button click
+
+    const feedbackButton =
+    document.querySelector('.feedback-button');
+
+    if(feedbackButton){
+
+        feedbackButton.addEventListener('click', () => {
+
+            alert("Thank you for your feedback!");
+
+        });
+
+    }
+
+</script>
+
+</body>
+</html>
