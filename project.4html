@@ -1,1 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Labs - LAUC</title>
 
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #1a2530);
+            color: white;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .pcce-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .pcce-logo-img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 8px;
+            background-color: white;
+            padding: 5px;
+        }
+
+        .virtual-labs-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .virtual-labs-logo i {
+            font-size: 32px;
+            color: #3498db;
+        }
+
+        .virtual-labs-logo h1 span {
+            color: #3498db;
+        }
+
+        .content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .content-header {
+            margin-bottom: 30px;
+        }
+
+        .content-header h2 {
+            font-size: 28px;
+            color: #2c3e50;
+        }
+
+        .content-header p {
+            color: #7f8c8d;
+        }
+
+        .aim-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+            gap: 20px;
+        }
+
+        .section-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            border-color: #3498db;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .section-card.active {
+            background-color: #e8f4fc;
+            border-color: #3498db;
+        }
+
+        .section-card i {
+            font-size: 32px;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .section-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .section-card p {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            color: #7f8c8d;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Debug Box -->
+    <div class="debug-info" id="debugInfo">
+        Checking image loading...
+    </div>
+
+    <!-- Header -->
+    <header>
+
+        <div class="container header-container">
+
+            <div class="logo-section">
+
+                <div class="pcce-logo-container">
+
+                    <img
+                    src="https://raw.githubusercontent.com/dineshkute90/virtual_lab_LAUC/main/pccoe.png"
+                    alt="PCOE Logo"
+                    class="pcce-logo-img"
+                    id="pcceLogo">
+
+                    <div>
+                        <h3>APPLIED SCIENCES & HUMANITIES</h3>
+                        <small>
+                            Pimpri Chinchwad College of Engineering
+                        </small>
+                    </div>
+
+                </div>
+
+                <div class="virtual-labs-logo">
+
+                    <i class="fas fa-flask"></i>
+
+                    <h1>
+                        Virtual <span>Labs</span>
+                    </h1>
+
+                </div>
+
+            </div>
+
+            <div>
+                <i class="fas fa-user-circle"></i>
+                Welcome, Student
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Main Content -->
+    <main class="container content">
+
+        <div class="content-header">
+
+            <h2>A Virtual Lab on Rank of Matrix</h2>
+
+            <p>Engineering Mathematics Experiment</p>
+
+        </div>
+
+        <!-- Cards -->
+        <div class="aim-sections">
+
+            <div class="section-card active">
+                <i class="fas fa-bullseye"></i>
+                <h3>Aim</h3>
+                <p>Objective of the experiment</p>
+            </div>
+
+            <div class="section-card">
+                <i class="fas fa-book"></i>
+                <h3>Theory</h3>
+                <p>Background concepts</p>
+            </div>
+
+            <div class="section-card">
+                <i class="fas fa-question-circle"></i>
+                <h3>Pretest</h3>
+                <p>Pre-experiment assessment</p>
+            </div>
+
+            <div class="section-card">
+                <i class="fas fa-desktop"></i>
+                <h3>Simulation</h3>
+                <p>Interactive simulation</p>
+            </div>
+
+            <div class="section-card">
+                <i class="fas fa-clipboard-check"></i>
+                <h3>Posttest</h3>
+                <p>Post-experiment assessment</p>
+            </div>
+
+            <div class="section-card">
+                <i class="fas fa-book-open"></i>
+                <h3>References</h3>
+                <p>Further reading materials</p>
+            </div>
+
+            <div class="section-card">
+                <i class="fas fa-users"></i>
+                <h3>Contributors</h3>
+                <p>People involved</p>
+            </div>
+
+            <div class="section-card">
+                <i class="fas fa-comment-alt"></i>
+                <h3>Feedback</h3>
+                <p>Share your experience</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="container">
+
+        <p>
+            Virtual Labs &copy; 2025 |
+            Applied Sciences & Humanities Department |
+            Pimpri Chinchwad College of Engineering
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        // Wait until page fully loads
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Debug image loading
+            const logoImg = document.getElementById('pcceLogo');
+
+            const debugInfo =
+            document.getElementById('debugInfo');
+
+            if (logoImg) {
+
+                logoImg.onload = function () {
+
+                    debugInfo.innerHTML =
+                    '✓ PCOE logo loaded successfully';
+
+                    debugInfo.style.background =
+                    'rgba(46, 204, 113, 0.8)';
+
+                    setTimeout(() => {
+
+                        debugInfo.style.display = 'none';
+
+                    }, 3000);
+                };
+
+                logoImg.onerror = function () {
+
+                    debugInfo.innerHTML =
+                    '✗ PCOE logo failed to load';
+
+                    debugInfo.style.background =
+                    'rgba(231, 76, 60, 0.8)';
+                };
+            }
+
+            // SECTION CARD CLICKING
+            const sectionCards =
+            document.querySelectorAll('.section-card');
+
+            sectionCards.forEach(card => {
+
+                card.addEventListener('click', function () {
+
+                    // Remove active class
+                    sectionCards.forEach(c => {
+                        c.classList.remove('active');
+                    });
+
+                    // Add active class
+                    this.classList.add('active');
+
+                    // Get section name
+                    const sectionName =
+                    this.querySelector('h3').textContent;
+
+                    // Popup message
+                    alert(sectionName + " button clicked");
+
+                    console.log(sectionName + " clicked");
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
