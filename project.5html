@@ -1,127 +1,114 @@
 <script>
-    // Debug image loading
-    document.addEventListener('DOMContentLoaded', function() {
-        const logoImg = document.getElementById('pcceLogo');
-        const debugInfo = document.getElementById('debugInfo');
 
-        logoImg.onload = function() {
-            debugInfo.innerHTML = '✓ PCOE logo loaded successfully';
-            debugInfo.style.background = 'rgba(46, 204, 113, 0.8)';
-            setTimeout(() => {
-                debugInfo.style.display = 'none';
-            }, 3000);
-        };
+const sectionCards = document.querySelectorAll('.section-card');
+const contentBox = document.getElementById('contentBox');
 
-        logoImg.onerror = function() {
-            debugInfo.innerHTML = '✗ PCOE logo failed to load, using fallback';
-            debugInfo.style.background = 'rgba(231, 76, 60, 0.8)';
-            setTimeout(() => {
-                debugInfo.style.display = 'none';
-            }, 5000);
-        };
+sectionCards.forEach(card => {
+
+    card.addEventListener('click', () => {
+
+        // Remove active class
+        sectionCards.forEach(c => c.classList.remove('active'));
+
+        // Add active class
+        card.classList.add('active');
+
+        // Get clicked section name
+        const sectionName = card.querySelector('h3').innerText;
+
+        // Dynamic content changing
+        if(sectionName === "Aim") {
+
+            contentBox.innerHTML = `
+                <h3>Aim</h3>
+                <div class="question-text">
+                    To find the Jacobian determinant of given functions with
+                    respect to the given variables using partial differentiation.
+                </div>
+            `;
+
+        }
+
+        else if(sectionName === "Theory") {
+
+            contentBox.innerHTML = `
+                <h3>Theory</h3>
+                <div class="question-text">
+                    Jacobian is a determinant formed using first order partial
+                    derivatives of functions.
+                </div>
+            `;
+
+        }
+
+        else if(sectionName === "Pretest") {
+
+            contentBox.innerHTML = `
+                <h3>Pretest</h3>
+                <div class="question-text">
+                    Solve the pretest questions before performing the experiment.
+                </div>
+            `;
+
+        }
+
+        else if(sectionName === "Simulation") {
+
+            contentBox.innerHTML = `
+                <h3>Simulation</h3>
+                <div class="question-text">
+                    Perform Jacobian calculations using the simulator.
+                </div>
+            `;
+
+        }
+
+        else if(sectionName === "Posttest") {
+
+            contentBox.innerHTML = `
+                <h3>Posttest</h3>
+                <div class="question-text">
+                    Answer the posttest questions after completing the experiment.
+                </div>
+            `;
+
+        }
+
+        else if(sectionName === "References") {
+
+            contentBox.innerHTML = `
+                <h3>References</h3>
+                <div class="question-text">
+                    Higher Engineering Mathematics by B.S. Grewal.
+                </div>
+            `;
+
+        }
+
+        else if(sectionName === "Contributors") {
+
+            contentBox.innerHTML = `
+                <h3>Contributors</h3>
+                <div class="question-text">
+                    Developed by the Applied Sciences & Humanities Department.
+                </div>
+            `;
+
+        }
+
+        else if(sectionName === "Feedback") {
+
+            contentBox.innerHTML = `
+                <h3>Feedback</h3>
+                <div class="question-text">
+                    Thank you for using the Virtual Lab.
+                </div>
+            `;
+
+        }
+
     });
 
-    // Section cards interaction
-    const sectionCards = document.querySelectorAll('.section-card');
+});
 
-    // Content area
-    const contentArea = document.getElementById('aimContent');
-
-    sectionCards.forEach(card => {
-        card.addEventListener('click', () => {
-
-            // Remove active class from all cards
-            sectionCards.forEach(c => c.classList.remove('active'));
-
-            // Add active class to clicked card
-            card.classList.add('active');
-
-            // Get section name
-            const sectionName = card.querySelector('h3').textContent;
-
-            // Change content dynamically
-            if(sectionName === "Aim") {
-
-                contentArea.innerHTML = `
-                    <h3>Aim</h3>
-
-                    <div class="question-text">
-                        To find the Jacobian determinant of given functions
-                        with respect to the given variables using partial differentiation.
-                    </div>
-                `;
-
-            } else if(sectionName === "Theory") {
-
-                contentArea.innerHTML = `
-                    <h3>Theory</h3>
-
-                    <div class="question-text">
-                        Jacobian is a determinant used in transformation of variables.
-                        It is formed using first order partial derivatives of functions.
-                    </div>
-                `;
-
-            } else if(sectionName === "Pretest") {
-
-                contentArea.innerHTML = `
-                    <h3>Pretest</h3>
-
-                    <div class="question-text">
-                        Answer the following questions before starting the experiment.
-                    </div>
-                `;
-
-            } else if(sectionName === "Simulation") {
-
-                contentArea.innerHTML = `
-                    <h3>Simulation</h3>
-
-                    <div class="question-text">
-                        Perform the Jacobian determinant calculation using the simulator.
-                    </div>
-                `;
-
-            } else if(sectionName === "Posttest") {
-
-                contentArea.innerHTML = `
-                    <h3>Posttest</h3>
-
-                    <div class="question-text">
-                        Evaluate your understanding after completing the experiment.
-                    </div>
-                `;
-
-            } else if(sectionName === "References") {
-
-                contentArea.innerHTML = `
-                    <h3>References</h3>
-
-                    <div class="question-text">
-                        Higher Engineering Mathematics by B.S. Grewal.
-                    </div>
-                `;
-
-            } else if(sectionName === "Contributors") {
-
-                contentArea.innerHTML = `
-                    <h3>Contributors</h3>
-
-                    <div class="question-text">
-                        Developed by the Applied Sciences & Humanities Department.
-                    </div>
-                `;
-
-            } else if(sectionName === "Feedback") {
-
-                contentArea.innerHTML = `
-                    <h3>Feedback</h3>
-
-                    <div class="question-text">
-                        Thank you for using the virtual lab. Please share your feedback.
-                    </div>
-                `;
-            }
-        });
-    });
 </script>
